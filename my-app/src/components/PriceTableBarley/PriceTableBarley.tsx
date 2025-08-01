@@ -2,16 +2,24 @@ import React from 'react';
 import styles from '../PriceTableBarley/PriceTableBarley.module.css'
 
 interface PriceTableProps {
-    price: number[],
-    setPrices: React.Dispatch<React.SetStateAction<number[]>>;
+    pricesBarleyRostov: (number | string)[],
+    setPricesBarleyRostov: React.Dispatch<React.SetStateAction<(number | string)[]>>,
+    pricesBarleyTarasov: (number | string)[],
+    setPricesBarleyTarasov: React.Dispatch<React.SetStateAction<(number | string)[]>>,
 }
 
-const PriceTableBarley: React.FC<PriceTableProps> = ({prices, setPrices}) => {
+const PriceTableBarley: React.FC<PriceTableProps> = ({pricesBarleyRostov, setPricesBarleyRostov, pricesBarleyTarasov, setPricesBarleyTarasov}) => {
 
-    const handleChange = (index: number, value: string) => {
-        const newPrices = [...prices];
-        newPrices[index] = Number(value);
-        setPrices(newPrices);
+    const handleChangeRostov = (index: number, value: string) => {
+        const newPrices = [...pricesBarleyRostov];
+        newPrices[index] = value === '' ? '' : Number(value);
+        setPricesBarleyRostov(newPrices);
+    }
+
+    const handleChangeTarasov = (index: number, value: string) => {
+        const newPrices = [...pricesBarleyTarasov];
+        newPrices[index] = value === '' ? '' : Number(value);
+        setPricesBarleyTarasov(newPrices);
     }
 
     return (
@@ -20,12 +28,12 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({prices, setPrices}) => {
                 <div className={styles.h4Block}>
                     <h4 className={styles.h4} >Ростов-на-Дону</h4>
                 </div>
-                {prices.map((price, index) => (
+                {pricesBarleyRostov.map((price, index) => (
                     <input
                         key={index}
                         type="number"
                         value={price}
-                        onChange={(e) => handleChange(index, e.target.value)}
+                        onChange={(e) => handleChangeRostov(index, e.target.value)}
                         className={styles.input}
                         
                     />          
@@ -35,12 +43,12 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({prices, setPrices}) => {
             <div className={styles.h4Block}>
                 <h4 className={styles.h4} >Тарасовский ФЛ</h4>
             </div>
-                {prices.map((price: number, index) => (
+                {pricesBarleyTarasov.map((price: number, index) => (
                     <input
                         key={index}
                         type="number"
                         value={price}
-                        onChange={(e) => handleChange(index, e.target.value)}
+                        onChange={(e) => handleChangeTarasov(index, e.target.value)}
                         className={styles.input}
                     />          
                 ))}
