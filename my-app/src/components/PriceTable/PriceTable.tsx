@@ -44,13 +44,13 @@ interface PriceTableProps {
             <div className={styles.containerPrice}>
                 <div className={styles.class}>
                     <div className={styles.h4Block}>
-                        <h4  className={styles.h4} >Класс</h4>
+                        <h4  className={styles.h4} >Протеин</h4>
                     </div>
                     {classWeth.map((price, index) => (
                         <input
                             key={index}
-                            type="number"
-                            value={price}
+                            type="text"
+                            value={`${price.toFixed(1)}%`}
                             onChange={(e) => handleChangeBarley(index, e.target.value)}
                             className={styles.inputClass}
                             disabled
