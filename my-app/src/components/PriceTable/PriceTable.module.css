@@ -63,3 +63,15 @@
 .h4 {
     font-size: 14px;
 }
+
+.up {
+    background-color: rgb(154, 205, 112);
+}
+
+.down {
+    background-color: rgb(230, 135, 135);
+}
+
+.some {
+    background-color: rgb(231, 191, 143);
+}
