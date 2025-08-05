@@ -7,7 +7,9 @@ interface PriceTableProps {
     pricesTarasov: (number | string)[];
     setPricesTarasov: React.Dispatch<React.SetStateAction<(number | string)[]>>;
     rostovChanges: string[];         
-    tarasovChanges: string[];        
+    tarasovChanges: string[];   
+    differencePriceRostov: number[];  
+    differencePriceTarasov: number[];      
     className?: string;
   }
 
@@ -18,25 +20,27 @@ interface PriceTableProps {
     setPricesTarasov,
     rostovChanges,           
     tarasovChanges,
+    differencePriceRostov,
+    differencePriceTarasov,
     className
   }) => {
         const classWeth = [15.3, 14.5, 14.0, 13.5, 13.0, 12.5, 12.0, 11.5, 11.2, 10.5, 10, 8.5]
 
         const handleChangeRostov = (index: number, value: string) => {
             const newPrices = [...pricesRostov];
-            newPrices[index] = value === '' ? '' : Number(value);
+            newPrices[index] = value === '' ? '' : value;
             setPricesRostov(newPrices);
         }
 
         const handleChangeTarasov = (index: number, value: string) => {
             const newPrice = [...pricesTarasov];
-            newPrice[index] = value === '' ? '' : Number(value);
+            newPrice[index] = value === '' ? '' : value;
             setPricesTarasov(newPrice);
         }
 
         const handleChangeBarley = (index: number, value: string) => {
             const newPrice = [...pricesRostov];
-            newPrice[index] = value === '' ? '' : Number(value);
+            newPrice[index] = value === '' ? '' : value;
             setPricesTarasov(newPrice);
         }
 
@@ -62,30 +66,58 @@ interface PriceTableProps {
                         <div className={styles.h4Block}>
                             <h4 className={styles.h4} >Ростов-на-Дону</h4>
                         </div>
-                        {pricesRostov.map((price, index) => (
-                            <input
-                                key={index}
-                                type="number"
-                                value={price}
-                                onChange={(e) => handleChangeRostov(index, e.target.value)}
-                                className={`${styles.input} ${styles[rostovChanges[index]]}`}
-                                
-                            />          
-                        ))}
+                        <div className={styles.blockRostov}>
+                            <div className={styles.blockPriceRostov}>
+                                {pricesRostov.map((price, index) => (
+                                    <input
+                                        key={index}
+                                        type="number"
+                                        value={price}
+                                        onChange={(e) => handleChangeRostov(index, e.target.value)}
+                                        className={`${styles.input} ${styles[rostovChanges[index]]}`}
+                                        
+                                    />          
+                                ))}
+                            </div>
+                            <div className={styles.blockDiffRostov}>
+                                {differencePriceRostov.map((diff, index) => (
+                                    <input
+                                        key={index}
+                                        type='text'
+                                        value={diff}  
+                                        className={`${styles.diff}`}                                
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.priceTwo}>
                         <div className={styles.h4Block}>
                             <h4 className={styles.h4} >Тарасовский ФЛ</h4>
                         </div>
-                        {pricesTarasov.map((price: number, index) => (
-                            <input
-                                key={index}
-                                type="number"
-                                value={price}
-                                onChange={(e) => handleChangeTarasov(index, e.target.value)}
-                                className={`${styles.input} ${styles[tarasovChanges[index]]}`}
-                            />          
-                        ))}
+                        <div className={styles.blockRostov}>
+                            <div className={styles.blockPriceRostov}>
+                                {pricesTarasov.map((price: number, index) => (
+                                    <input
+                                        key={index}
+                                        type="number"
+                                        value={price}
+                                        onChange={(e) => handleChangeTarasov(index, e.target.value)}
+                                        className={`${styles.input} ${styles[tarasovChanges[index]]}`}
+                                    />          
+                                ))}
+                            </div>
+                            <div className={styles.blockDiffRostov}>
+                                {differencePriceTarasov.map((diff, index) => (
+                                    <input
+                                        key={index}
+                                        type='text'
+                                        value={diff}  
+                                        className={`${styles.diff}`}                                
+                                    />
+                                ))}
+                            </div>
+                        </div>                      
                     </div>
                 </div>
             </div>

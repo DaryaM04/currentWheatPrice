@@ -25,14 +25,18 @@ const WheatPricesPage: React.FC = () => {
     const [rostovBarleyChanges, setRostovBarleyChanges] = useState<string[]>(Array(1).fill('same'));
     const [tarasovBarleyChanges, setTarasovBarleyChanges] = useState<string[]>(Array(1).fill('same'));
 
-    const [selectedDate, setSelectedDate] = useState<string>('')
+    const [selectedDate, setSelectedDate] = useState<string>('');
+    const [differencePriceRostov, setDifferencePriceRostov] = useState<string[]>(Array(12).fill('   —'));
+    const [differencePriceTarasov, setDifferencePriceTarasov] = useState<string[]>(Array(12).fill('   —'));
+
+
 
     useEffect(() => {
         const storageRostov = localStorage.getItem(LOCAL_STORAGE_KEY_ROSTOV);
         const storageTarasov = localStorage.getItem(LOCAL_STORAGE_KEY_TARASOV);
         const storageBarleyRostov = localStorage.getItem(LOCAL_STORAGE_KEY_BARLEY_ROSTOV);
         const storageBarleyTarasov = localStorage.getItem(LOCAL_STORAGE_KEY_BARLEY_TARASOV);
-      
+
         if (storageRostov) {
           const parsed = JSON.parse(storageRostov);
           setPricesRostov(parsed);
@@ -60,28 +64,47 @@ const WheatPricesPage: React.FC = () => {
       
     const handleSave = () => {
         const newChangesRostov = pricesRostov.map((price: number, i:number ) => {
-            if (price > oldPricesRostov[i]) return 'up';
-            if (price < oldPricesRostov[i]) return 'down';
-            return 'same';
+            if (Number(price) > Number(oldPricesRostov[i])) {
+                differencePriceRostov[i] = `+${(Number(price) - Number(oldPricesRostov[i])).toFixed(2)}`;
+                return 'up';
+            }
+            if (Number(price) < Number(oldPricesRostov[i])) {
+                differencePriceRostov[i] = `- ${Math.abs(Number(price) - Number(oldPricesRostov[i])).toFixed(2)}`;
+                return 'down';
+            }
+            else {
+                differencePriceRostov[i] = `   —`;
+                return 'same';
+            }
         });
     
         const newChangesTarasov = pricesTarasov.map((price:number , i: number) => {
-            if (price > oldPricesTarasov[i]) return 'up';
-            if (price < oldPricesTarasov[i]) return 'down';
-            return 'same';
+            if (Number(price) > Number(oldPricesTarasov[i])) {
+                differencePriceTarasov[i] = `+${(Number(price) - Number(oldPricesTarasov[i])).toFixed(2)}`;
+                return 'up';
+            } 
+            if (Number(price) < Number(oldPricesTarasov[i])) {
+                differencePriceTarasov[i] = `- ${Math.abs(Number(price) - Number(oldPricesTarasov[i])).toFixed(2)}`;
+                return 'down'
+            }
+            else {
+                differencePriceTarasov[i] = `   —`;
+                return 'same';
+            } 
         });
 
         const newChangesBarleyRostov = pricesBarleyRostov.map((price: number, i: number) => {
-            if(price > oldPricesBarleyRostov[i]) return 'up';
-            if(price < oldPricesBarleyRostov[i]) return 'down';
+            if(Number(price) > Number(oldPricesBarleyRostov[i])) return 'up';
+            if(Number(price) < Number(oldPricesBarleyRostov[i])) return 'down';
             return 'some';
         });
 
         const newChangesBarleyTarasov = pricesBarleyTarasov.map((price: number, i: number) => {
-            if(price > oldPricesBarleyTarasov[i]) return 'up';
-            if(price < oldPricesBarleyTarasov[i]) return 'down';
+            if(Number(price) > Number(oldPricesBarleyTarasov[i])) return 'up';
+            if(Number(price) < Number(oldPricesBarleyTarasov[i])) return 'down';
             return 'some';
         });
+  
     
         setRostovChanges(newChangesRostov);
         setTarasovChanges(newChangesTarasov);
@@ -91,6 +114,8 @@ const WheatPricesPage: React.FC = () => {
         setOldPricesTarasov([...pricesTarasov]);
         setOldPricesBarleyRostov([...pricesBarleyRostov]);
         setOldPricesBarleyTarasov([...pricesBarleyTarasov]);
+        setDifferencePriceRostov([...differencePriceRostov]);
+        setDifferencePriceTarasov([...differencePriceTarasov]);
 
         localStorage.setItem(LOCAL_STORAGE_KEY_ROSTOV, JSON.stringify(pricesRostov));
         localStorage.setItem(LOCAL_STORAGE_KEY_TARASOV, JSON.stringify(pricesTarasov));
@@ -112,6 +137,8 @@ const WheatPricesPage: React.FC = () => {
             setPricesTarasov={setPricesTarasov}
             rostovChanges={rostovChanges}
             tarasovChanges={tarasovChanges}
+            differencePriceRostov={differencePriceRostov}
+            differencePriceTarasov={differencePriceTarasov}
             className={styles.priceTable}
         />
         <div className={styles.barley}> 
