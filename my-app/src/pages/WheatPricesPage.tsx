@@ -25,6 +25,8 @@ const WheatPricesPage: React.FC = () => {
     const [rostovBarleyChanges, setRostovBarleyChanges] = useState<string[]>(Array(1).fill('same'));
     const [tarasovBarleyChanges, setTarasovBarleyChanges] = useState<string[]>(Array(1).fill('same'));
 
+    const [selectedDate, setSelectedDate] = useState<string>('')
+
     useEffect(() => {
         const storageRostov = localStorage.getItem(LOCAL_STORAGE_KEY_ROSTOV);
         const storageTarasov = localStorage.getItem(LOCAL_STORAGE_KEY_TARASOV);
@@ -99,7 +101,7 @@ const WheatPricesPage: React.FC = () => {
 
     return (
      <div>
-        <Header/>
+        <Header selectedDate={selectedDate}/>
         <div className={styles.titleBlock}> 
             <h1 className={styles.title}>Пшеница</h1>
         </div>
@@ -123,6 +125,13 @@ const WheatPricesPage: React.FC = () => {
             rostovBarleyChanges={rostovBarleyChanges}
             tarasovBarleyChanges={tarasovBarleyChanges}
             className={styles.PriceTableBarley}
+        />
+        <input
+            placeholder='введите дату'
+            className={styles.inputDate}
+            type='date'
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
         />
         <button className={styles.button} onClick={handleSave}>Сохранить</button>
      </div>
