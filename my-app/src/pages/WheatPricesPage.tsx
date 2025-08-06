@@ -28,7 +28,8 @@ const WheatPricesPage: React.FC = () => {
     const [selectedDate, setSelectedDate] = useState<string>('');
     const [differencePriceRostov, setDifferencePriceRostov] = useState<string[]>(Array(12).fill('   —'));
     const [differencePriceTarasov, setDifferencePriceTarasov] = useState<string[]>(Array(12).fill('   —'));
-
+    const [differencePriceBarleyRostov, setDifferencePriceBarleyRostov] = useState<string[]>(Array(1).fill('   —'));
+    const [differencePriceBarleyTarasov, setDifferencePriceBarleyTarasov] = useState<string[]>(Array(1).fill('   —'));
 
 
     useEffect(() => {
@@ -94,15 +95,34 @@ const WheatPricesPage: React.FC = () => {
         });
 
         const newChangesBarleyRostov = pricesBarleyRostov.map((price: number, i: number) => {
-            if(Number(price) > Number(oldPricesBarleyRostov[i])) return 'up';
-            if(Number(price) < Number(oldPricesBarleyRostov[i])) return 'down';
-            return 'some';
+            if(Number(price) > Number(oldPricesBarleyRostov[i])) {
+                differencePriceBarleyRostov[i] = `+ ${(Number(price) - Number(oldPricesBarleyRostov[i])).toFixed(2)}`
+                return 'up';
+            }
+            if(Number(price) < Number(oldPricesBarleyRostov[i])) {
+                differencePriceBarleyRostov[i] = `- ${(Math.abs(Number(price) - oldPricesBarleyRostov[i])).toFixed(2)}`
+                return 'down';
+            }
+            else {
+                differencePriceBarleyRostov[i] = `   —`;
+                return 'same';
+            }
         });
 
         const newChangesBarleyTarasov = pricesBarleyTarasov.map((price: number, i: number) => {
-            if(Number(price) > Number(oldPricesBarleyTarasov[i])) return 'up';
-            if(Number(price) < Number(oldPricesBarleyTarasov[i])) return 'down';
-            return 'some';
+            if(Number(price) > Number(oldPricesBarleyTarasov[i])) {
+                differencePriceBarleyTarasov[i] = `+ ${(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
+                return 'up';
+            }
+            if(Number(price) < Number(oldPricesBarleyTarasov[i])) {
+                differencePriceBarleyTarasov[i] = `- ${Math.abs(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
+                return 'down';
+            }
+            else {
+                differencePriceBarleyTarasov[i] = `   —`
+                return 'some';
+            }
+            
         });
   
     
@@ -151,6 +171,8 @@ const WheatPricesPage: React.FC = () => {
             setPricesBarleyTarasov={setPricesBarleyTarasov}
             rostovBarleyChanges={rostovBarleyChanges}
             tarasovBarleyChanges={tarasovBarleyChanges}
+            differencePriceBarleyRostov={differencePriceBarleyRostov}
+            differencePriceBarleyTarasov={differencePriceBarleyTarasov}
             className={styles.PriceTableBarley}
         />
         <input

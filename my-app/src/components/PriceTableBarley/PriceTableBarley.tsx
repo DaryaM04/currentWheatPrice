@@ -8,6 +8,8 @@ interface PriceTableProps {
     setPricesBarleyTarasov: React.Dispatch<React.SetStateAction<(number | string)[]>>,
     rostovBarleyChanges: string[],
     tarasovBarleyChanges: string[],
+    differencePriceBarleyRostov: number[],
+    differencePriceBarleyTarasov: number[],
     className?: string
 }
 
@@ -18,6 +20,8 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
     setPricesBarleyTarasov,
     rostovBarleyChanges,
     tarasovBarleyChanges,
+    differencePriceBarleyRostov,
+    differencePriceBarleyTarasov,
     className
 }) => {
 
@@ -39,36 +43,61 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
                 <div className={styles.h4Block}>
                     <h4 className={styles.h4} >Ростов-на-Дону</h4>
                 </div>
-                {pricesBarleyRostov.map((price: number, index: number) => (
-                    <input
-                        key={index}
-                        type="number"
-                        value={price}
-                        onChange={(e) => handleChangeRostov(index, e.target.value)}
-                        className={`${styles.input} ${styles[rostovBarleyChanges[index]]}`}
-                        
-                    />          
-                ))}
+                <div className={styles.blockRostov}>
+                    <div className={styles.blockPriceRostov}>
+                        {pricesBarleyRostov.map((price: number, index: number) => (
+                            <input
+                                key={index}
+                                type="number"
+                                value={price}
+                                onChange={(e) => handleChangeRostov(index, e.target.value)}
+                                className={`${styles.input} ${styles[rostovBarleyChanges[index]]}`}
+                                
+                            />          
+                        ))}
+                    </div>
+                    <div className={styles.blockDiffRostov}>
+                        {differencePriceBarleyRostov.map((diff, index) => (
+                            <input
+                                key={index}
+                                type='text'
+                                value={diff}
+                                className={`${styles.diff}`}                                
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
             <div className={styles.priceTwo}>
             <div className={styles.h4Block}>
                 <h4 className={styles.h4} >Тарасовский ФЛ</h4>
             </div>
-                {pricesBarleyTarasov.map((price: number, index: number) => (
-                    <input
-                        key={index}
-                        type="number"
-                        value={price}
-                        onChange={(e) => handleChangeTarasov(index, e.target.value)}
-                        className={`${styles.input} ${styles[tarasovBarleyChanges[index]]}`}
-                    />          
-                ))}
+            <div className={styles.blockRostov}>
+                <div className={styles.blockPriceRostov}>
+                    {pricesBarleyTarasov.map((price: number, index: number) => (
+                        <input
+                            key={index}
+                            type="number"
+                            value={price}
+                            onChange={(e) => handleChangeTarasov(index, e.target.value)}
+                            className={`${styles.input} ${styles[tarasovBarleyChanges[index]]}`}
+                        />          
+                    ))}
+                </div>
+                <div className={styles.blockDiffRostov}>
+                    {differencePriceBarleyTarasov.map((diff, index) => (
+                        <input
+                            key={index}
+                            type='text'
+                            value={diff}  
+                            className={`${styles.diff}`}                                
+                        />
+                    ))}
+                </div>
             </div>
         </div>
-       
+        </div>
     )
-
-
 }
 
 export default PriceTableBarley;
