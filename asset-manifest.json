@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/currentWheatPrice/static/css/main.256f33d5.css",
-    "main.js": "/currentWheatPrice/static/js/main.ddb8a4dc.js",
+    "main.css": "/currentWheatPrice/static/css/main.97add68f.css",
+    "main.js": "/currentWheatPrice/static/js/main.3f77aa11.js",
     "static/js/453.96453769.chunk.js": "/currentWheatPrice/static/js/453.96453769.chunk.js",
     "static/media/backgroundImage.jpg": "/currentWheatPrice/static/media/backgroundImage.56df8f46905013a6d85e.jpg",
     "static/media/logo.png": "/currentWheatPrice/static/media/logo.8c8afc12a91a66be7f03.png",
     "index.html": "/currentWheatPrice/index.html",
-    "main.256f33d5.css.map": "/currentWheatPrice/static/css/main.256f33d5.css.map",
-    "main.ddb8a4dc.js.map": "/currentWheatPrice/static/js/main.ddb8a4dc.js.map",
+    "main.97add68f.css.map": "/currentWheatPrice/static/css/main.97add68f.css.map",
+    "main.3f77aa11.js.map": "/currentWheatPrice/static/js/main.3f77aa11.js.map",
     "453.96453769.chunk.js.map": "/currentWheatPrice/static/js/453.96453769.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.256f33d5.css",
-    "static/js/main.ddb8a4dc.js"
+    "static/css/main.97add68f.css",
+    "static/js/main.3f77aa11.js"
   ]
 }
