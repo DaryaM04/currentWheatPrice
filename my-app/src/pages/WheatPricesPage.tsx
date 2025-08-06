@@ -70,7 +70,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'up';
             }
             if (Number(price) < Number(oldPricesRostov[i])) {
-                differencePriceRostov[i] = `- ${Math.abs(Number(price) - Number(oldPricesRostov[i])).toFixed(2)}`;
+                differencePriceRostov[i] = `-${Math.abs(Number(price) - Number(oldPricesRostov[i])).toFixed(2)}`;
                 return 'down';
             }
             else {
@@ -85,7 +85,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'up';
             } 
             if (Number(price) < Number(oldPricesTarasov[i])) {
-                differencePriceTarasov[i] = `- ${Math.abs(Number(price) - Number(oldPricesTarasov[i])).toFixed(2)}`;
+                differencePriceTarasov[i] = `-${Math.abs(Number(price) - Number(oldPricesTarasov[i])).toFixed(2)}`;
                 return 'down'
             }
             else {
@@ -96,11 +96,11 @@ const WheatPricesPage: React.FC = () => {
 
         const newChangesBarleyRostov = pricesBarleyRostov.map((price: number, i: number) => {
             if(Number(price) > Number(oldPricesBarleyRostov[i])) {
-                differencePriceBarleyRostov[i] = `+ ${(Number(price) - Number(oldPricesBarleyRostov[i])).toFixed(2)}`
+                differencePriceBarleyRostov[i] = `+${(Number(price) - Number(oldPricesBarleyRostov[i])).toFixed(2)}`
                 return 'up';
             }
             if(Number(price) < Number(oldPricesBarleyRostov[i])) {
-                differencePriceBarleyRostov[i] = `- ${(Math.abs(Number(price) - oldPricesBarleyRostov[i])).toFixed(2)}`
+                differencePriceBarleyRostov[i] = `-${(Math.abs(Number(price) - oldPricesBarleyRostov[i])).toFixed(2)}`
                 return 'down';
             }
             else {
@@ -111,11 +111,11 @@ const WheatPricesPage: React.FC = () => {
 
         const newChangesBarleyTarasov = pricesBarleyTarasov.map((price: number, i: number) => {
             if(Number(price) > Number(oldPricesBarleyTarasov[i])) {
-                differencePriceBarleyTarasov[i] = `+ ${(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
+                differencePriceBarleyTarasov[i] = `+${(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
                 return 'up';
             }
             if(Number(price) < Number(oldPricesBarleyTarasov[i])) {
-                differencePriceBarleyTarasov[i] = `- ${Math.abs(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
+                differencePriceBarleyTarasov[i] = `-${Math.abs(Number(price) - oldPricesBarleyTarasov[i]).toFixed(2)}`
                 return 'down';
             }
             else {
