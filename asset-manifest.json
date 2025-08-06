@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/currentWheatPrice/static/css/main.5787d38c.css",
+    "main.css": "/currentWheatPrice/static/css/main.a3f45312.css",
     "main.js": "/currentWheatPrice/static/js/main.b7b60681.js",
     "static/js/453.96453769.chunk.js": "/currentWheatPrice/static/js/453.96453769.chunk.js",
     "static/media/backgroundImage.jpg": "/currentWheatPrice/static/media/backgroundImage.56df8f46905013a6d85e.jpg",
     "static/media/logo.png": "/currentWheatPrice/static/media/logo.8c8afc12a91a66be7f03.png",
     "index.html": "/currentWheatPrice/index.html",
-    "main.5787d38c.css.map": "/currentWheatPrice/static/css/main.5787d38c.css.map",
+    "main.a3f45312.css.map": "/currentWheatPrice/static/css/main.a3f45312.css.map",
     "main.b7b60681.js.map": "/currentWheatPrice/static/js/main.b7b60681.js.map",
     "453.96453769.chunk.js.map": "/currentWheatPrice/static/js/453.96453769.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5787d38c.css",
+    "static/css/main.a3f45312.css",
     "static/js/main.b7b60681.js"
   ]
 }
