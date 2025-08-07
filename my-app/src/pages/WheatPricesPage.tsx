@@ -26,10 +26,10 @@ const WheatPricesPage: React.FC = () => {
     const [tarasovBarleyChanges, setTarasovBarleyChanges] = useState<string[]>(Array(1).fill('same'));
 
     const [selectedDate, setSelectedDate] = useState<string>('');
-    const [differencePriceRostov, setDifferencePriceRostov] = useState<string[]>(Array(12).fill('   —'));
-    const [differencePriceTarasov, setDifferencePriceTarasov] = useState<string[]>(Array(12).fill('   —'));
-    const [differencePriceBarleyRostov, setDifferencePriceBarleyRostov] = useState<string[]>(Array(1).fill('   —'));
-    const [differencePriceBarleyTarasov, setDifferencePriceBarleyTarasov] = useState<string[]>(Array(1).fill('   —'));
+    const [differencePriceRostov, setDifferencePriceRostov] = useState<string[]>(Array(12).fill(''));
+    const [differencePriceTarasov, setDifferencePriceTarasov] = useState<string[]>(Array(12).fill(''));
+    const [differencePriceBarleyRostov, setDifferencePriceBarleyRostov] = useState<string[]>(Array(1).fill(''));
+    const [differencePriceBarleyTarasov, setDifferencePriceBarleyTarasov] = useState<string[]>(Array(1).fill(''));
 
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'down';
             }
             else {
-                differencePriceRostov[i] = `   —`;
+                differencePriceRostov[i] = ``;
                 return 'same';
             }
         });
@@ -89,7 +89,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'down'
             }
             else {
-                differencePriceTarasov[i] = `   —`;
+                differencePriceTarasov[i] = ``;
                 return 'same';
             } 
         });
@@ -104,7 +104,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'down';
             }
             else {
-                differencePriceBarleyRostov[i] = `   —`;
+                differencePriceBarleyRostov[i] = ``;
                 return 'same';
             }
         });
@@ -119,7 +119,7 @@ const WheatPricesPage: React.FC = () => {
                 return 'down';
             }
             else {
-                differencePriceBarleyTarasov[i] = `   —`
+                differencePriceBarleyTarasov[i] = ``
                 return 'some';
             }
             
