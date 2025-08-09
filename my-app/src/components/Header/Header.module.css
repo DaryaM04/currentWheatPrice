@@ -5,6 +5,7 @@
     margin-left: 30px;
     margin-right: 20px;
     margin-bottom: -20px;
+    gap: 38px;
   }
   
   .logo {
@@ -16,7 +17,13 @@
     color: rgb(54, 28, 10);
     margin-right: 20px;
     font-weight: 700;
+    border: 1px solid rgb(241, 212, 45);
+    padding: 5px 12px;
+    border-radius: 50px;
+    background-color: #fffef7; /* чуть тёплый фон */
+    box-shadow: 0 4px 8px rgba(241, 212, 45, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
+  
 
   
