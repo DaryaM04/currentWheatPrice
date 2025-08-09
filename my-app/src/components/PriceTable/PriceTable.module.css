@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 7px;
 }
 
 .input {
@@ -87,8 +87,8 @@
 }
 
 .diff {
-    width: 31px;
-    height: 31px;
+    width: 31.5px;
+    height: 31.5px;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     font-size: 10px;
@@ -100,11 +100,11 @@
 .blockPriceRostov {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
 .blockDiffRostov {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
