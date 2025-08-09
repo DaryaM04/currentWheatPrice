@@ -26,20 +26,20 @@
     width: 70px;
     font-style: none;
     border: none;
-    padding: 5px 7px;
+    padding: 6.8px 7px;
     background-color: rgb(254, 240, 223);
     border-radius: 5px;
     text-align: center;
     border: 1px solid rgb(88, 50, 21);
     font-weight:bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .inputClass {
     width: 50px;
     font-style: none;
     border: none;
-    padding: 7px 7px;
+    padding: 6.8px 7px;
     border-radius: 5px;
     text-align: center;
     background-color: rgb(231, 191, 143);
@@ -47,6 +47,7 @@
     font-weight: bold;
     color: rgb(61, 47, 47);
     opacity: 1;
+    font-size: 15px;
 }
 
 .h4Block {
@@ -86,8 +87,8 @@
 }
 
 .diff {
-    width: 31.5px;
-    height: 31.5px;
+    width: 32.59px;
+    height: 32.59px;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     font-size: 10px;
