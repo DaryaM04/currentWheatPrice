@@ -179,7 +179,7 @@ const WheatPricesPage: React.FC = () => {
             placeholder='введите дату'
             className={styles.inputDate}
             type='date'
-            value={selectedDate}
+            value={selectedDate && new Date()}
             onChange={(e) => setSelectedDate(e.target.value)}
         />
         <button className={styles.button} onClick={handleSave}>Сохранить</button>
