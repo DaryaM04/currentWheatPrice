@@ -87,8 +87,8 @@
 }
 
 .diff {
-    width: 30px;
-    height: 30px;
+    width: 31px;
+    height: 31px;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     font-size: 10px;
@@ -106,5 +106,5 @@
 .blockDiffRostov {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
 }
