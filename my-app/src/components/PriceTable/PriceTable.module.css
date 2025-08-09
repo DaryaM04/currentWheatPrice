@@ -26,20 +26,20 @@
     width: 70px;
     font-style: none;
     border: none;
-    padding: 6.8px 7px;
+    padding: 6px 7px;
     background-color: rgb(254, 240, 223);
     border-radius: 5px;
     text-align: center;
     border: 1px solid rgb(88, 50, 21);
     font-weight:bold;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .inputClass {
     width: 50px;
     font-style: none;
     border: none;
-    padding: 6.8px 7px;
+    padding: 6px 7px;
     border-radius: 5px;
     text-align: center;
     background-color: rgb(231, 191, 143);
@@ -47,7 +47,7 @@
     font-weight: bold;
     color: rgb(61, 47, 47);
     opacity: 1;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .h4Block {
@@ -87,8 +87,8 @@
 }
 
 .diff {
-    width: 32.59px;
-    height: 32.59px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     font-size: 10px;
@@ -106,5 +106,5 @@
 .blockDiffRostov {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 8.2px;
 }
