@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./assets/backgroundImage.jpg');
-  background-position: calc(50% + 90px) calc(50% - 70px);
+  background-position: calc(50% + 50px) calc(50% - 70px);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
