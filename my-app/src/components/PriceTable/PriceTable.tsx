@@ -75,20 +75,26 @@ interface PriceTableProps {
                                         value={price}
                                         onChange={(e) => handleChangeRostov(index, e.target.value)}
                                         className={`${styles.input} ${styles[rostovChanges[index]]}`}
-                                        
-                                    />          
+                                    />                                                                          
                                 ))}
                             </div>
                             <div className={styles.blockDiffRostov}>
                                 {differencePriceRostov.map((diff, index) => (
-                                    <input
-                                        key={index}
-                                        type='text'
-                                        value={
-                                            diff
-                                        }
-                                        className={`${styles.diff}`}                                
-                                    />
+                                    // <input
+                                    //     key={index}
+                                    //     type='text'
+                                    //     value={
+                                    //         diff
+                                    //     }
+                                    //     className={`${styles.diff}`}                                
+                                    // />
+                                    <div
+  key={index}
+  className={styles.diff}
+>
+  {diff}
+</div>
+
                                 ))}
                             </div>
                         </div>
