@@ -58,14 +58,12 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
                     </div>
                     <div className={styles.blockDiffRostov}>
                         {differencePriceBarleyRostov.map((diff, index) => (
-                            <input
+                            <div
                                 key={index}
-                                type='text'
-                                value={
-                                    diff
-                                }
-                                className={`${styles.diff}`}                                
-                            />
+                                className={styles.diff}
+                            >
+                                {diff}
+                            </div>                        
                         ))}
                     </div>
                 </div>
@@ -88,14 +86,12 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
                 </div>
                 <div className={styles.blockDiffRostov}>
                     {differencePriceBarleyTarasov.map((diff, index) => (
-                        <input
+                        <div
                             key={index}
-                            type='text'
-                            value={
-                                diff
-                            }
-                            className={`${styles.diff}`}                                
-                        />
+                            className={styles.diff}
+                        >
+                            {diff}
+                        </div>          
                     ))}
                 </div>
             </div>
