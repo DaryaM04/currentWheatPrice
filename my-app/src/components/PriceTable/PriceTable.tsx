@@ -80,21 +80,12 @@ interface PriceTableProps {
                             </div>
                             <div className={styles.blockDiffRostov}>
                                 {differencePriceRostov.map((diff, index) => (
-                                    // <input
-                                    //     key={index}
-                                    //     type='text'
-                                    //     value={
-                                    //         diff
-                                    //     }
-                                    //     className={`${styles.diff}`}                                
-                                    // />
                                     <div
-  key={index}
-  className={styles.diff}
->
-  {diff}
-</div>
-
+                                        key={index}
+                                        className={styles.diff}
+                                    >
+                                        {diff}
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -117,14 +108,12 @@ interface PriceTableProps {
                             </div>
                             <div className={styles.blockDiffRostov}>
                                 {differencePriceTarasov.map((diff, index) => (
-                                    <input
+                                    <div
                                         key={index}
-                                        type='text'
-                                        value={
-                                            diff
-                                        }
-                                        className={`${styles.diff}`}                                
-                                    />
+                                        className={styles.diff}
+                                    >
+                                        {diff}
+                                    </div>
                                 ))}
                             </div>
                         </div>                      
