@@ -85,9 +85,7 @@ interface PriceTableProps {
                                         key={index}
                                         type='text'
                                         value={
-                                            Number(diff) !== 0 && !isNaN(Number(diff))
-                                              ? (Number(diff) > 0 ? '+' : '') + Number(diff).toFixed(1)
-                                              : ''
+                                            diff
                                         }
                                         className={`${styles.diff}`}                                
                                     />
@@ -117,9 +115,7 @@ interface PriceTableProps {
                                         key={index}
                                         type='text'
                                         value={
-                                            Number(diff) !== 0 && !isNaN(Number(diff))
-                                              ? (Number(diff) > 0 ? '+' : '') + Number(diff).toFixed(1)
-                                              : ''
+                                            diff
                                         }
                                         className={`${styles.diff}`}                                
                                     />

@@ -62,9 +62,7 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
                                 key={index}
                                 type='text'
                                 value={
-                                    Number(diff) !== 0 && !isNaN(Number(diff))
-                                      ? (Number(diff) > 0 ? '+' : '') + Number(diff).toFixed(1)
-                                      : ''
+                                    diff
                                 }
                                 className={`${styles.diff}`}                                
                             />
@@ -94,9 +92,7 @@ const PriceTableBarley: React.FC<PriceTableProps> = ({
                             key={index}
                             type='text'
                             value={
-                                Number(diff) !== 0 && !isNaN(Number(diff))
-                                  ? (Number(diff) > 0 ? '+' : '') + Number(diff).toFixed(1)
-                                  : ''
+                                diff
                             }
                             className={`${styles.diff}`}                                
                         />
